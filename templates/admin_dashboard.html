@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PB Dairy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>📜 All Orders</h2>
+
+        {% if orders %}
+            <table class="order-table">
+                <tr>
+                    <th>Username</th>
+                    <th>Milk Type</th>
+                    <th>Liters</th>
+                    <th>Timestamp</th>
+                </tr>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.user.username }}</td>
+                        <td>{{ order.milk_type }}</td>
+                        <td>{{ order.liters }}</td>
+                        <td>{{ order.timestamp }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No orders have been placed yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('admin.admin_logout') }}" class="btn-danger">Logout</a>
+    </div>
+</body>
+</html>

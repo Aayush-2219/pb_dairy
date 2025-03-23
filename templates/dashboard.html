@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PB Dairy Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('order.order_milk') }}">🥛 Order Milk</a>
+        <a href="{{ url_for('milk.milk_info') }}">📜 Milk Info</a>
+        <a href="{{ url_for('order.history') }}">📦 Order History</a>
+        <a href="{{ url_for('contact') }}">📞 Contact</a>
+        <a href="{{ url_for('auth.logout') }}">🚪 Logout</a>
+    </nav>
+
+    <div class="dashboard-container">
+        <h1>Welcome, {{ user.username }}! 🥛</h1>
+        <div class="token-info">
+            <p>🔹 Tokens: <strong>{{ user.tokens }}</strong></p>
+        </div>
+
+        <!-- About PB Dairy Section -->
+        <div class="about-section">
+            <h2>About PB Dairy 🥛</h2>
+            <p>PB Dairy is a **free milk service** offering three delicious flavors: <b>Kesar, Strawberry, and Blue Milk</b>.</p>
+            <h3>This milk service was started with respect to our honourable PB gayyiya.❤👀<b></h3>
+            <p>Our mission is to provide **fresh and healthy milk for everyone** at no cost! 🌟</p>
+            
+        </div>
+    </div>
+</body>
+</html>

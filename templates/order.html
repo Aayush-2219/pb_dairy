@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Milk - PB Dairy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="order-container">
+        <h2>Order Milk 🥛</h2>
+        <p>You have <strong>{{ tokens }}</strong> tokens left.</p>
+
+        {% if request.args.get('ordered') %}
+            <p class="order-success">🎉 Thank you, {{ user.username }}! Your milk order has been placed.</p>
+        {% endif %}
+
+        {% if tokens > 0 %}
+        <form method="POST">
+            <div class="form-group">
+                <label>Select Milk Type:</label>
+                <select name="milk_type">
+                    <option value="Kesar">Kesar Milk</option>
+                    <option value="Strawberry">Strawberry Milk</option>
+                    <option value="Blue Milk">Blue Milk</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Amount (Liters):</label>
+                <input type="number" name="liters" min="1" max="10" value="1" required>
+            </div>
+            <button type="submit" class="btn-primary">Order Now</button>
+        </form>
+        {% else %}
+        <p class="no-tokens">You have no tokens left! 😢</p>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}" class="btn-secondary">Back to Dashboard</a>
+    </div>
+</body>
+</html>

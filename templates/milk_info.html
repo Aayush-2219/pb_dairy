@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Info - PB Dairy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="milk-container">
+        <h2>Our Milk Varieties 🥛</h2>
+        <ul class="milk-list">
+            {% for milk in milk_varieties %}
+                <li><strong>{{ milk.name }}</strong>: {{ milk.description }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% if current_user.is_authenticated %}{{ url_for('dashboard') }}{% else %}{{ url_for('auth.login') }}{% endif %}" class="btn-secondary">
+            Back to Dashboard
+        </a>
+    </div>
+</body>
+</html>

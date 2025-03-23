@@ -1,0 +1,491 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #333;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    background: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 90%;
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Page Containers */
+.page-container, .dashboard-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Variants */
+.order-btn { background: #28a745;}
+.order-btn:hover { background: #218838; transform: scale(1.05); }
+
+.info-btn { background: #17a2b8; }
+.info-btn:hover { background: #117a8b; transform: scale(1.05); }
+
+.history-btn { background: #ffc107; color: #333; }
+.history-btn:hover { background: #e0a800; transform: scale(1.05); }
+
+.about-btn { background: #6f42c1; }
+.about-btn:hover { background: #563d7c; transform: scale(1.05); }
+
+.contact-btn { background: #fd7e14; }
+.contact-btn:hover { background: #e6690f; transform: scale(1.05); }
+
+.logout-btn { background: #dc3545; }
+.logout-btn:hover { background: #c82333; transform: scale(1.05); }
+
+.back-btn { background: #007bff; }
+.back-btn:hover { background: #0056b3; transform: scale(1.05); }
+
+/* Order History Page */
+.order-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-list li {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.order-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Forms (Login, Signup, Order Milk) */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Form Fields */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary { background: #007bff; color: white; }
+.btn-primary:hover { background: #0056b3; }
+
+/* Order Milk Page */
+.order-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.order-container form {
+    margin-top: 20px;
+}
+
+.order-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.order-container select:focus {
+    border-color: #28a745;
+    box-shadow: 0px 0px 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Contact Page */
+.contact-details {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Milk Info Page */
+.milk-list {
+    list-style: none;
+    padding: 0;
+}
+
+.milk-list li {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.milk-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Order & Milk Info - Centered Dark Card */
+.order-container, .milk-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #121212;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    color: white;
+}
+
+/* Headings */
+.order-container h2, .milk-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #222;
+    color: white;
+    transition: 0.3s;
+}
+
+select:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(40, 167, 69, 0.5);
+}
+
+/* No Tokens Message */
+.no-tokens {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Milk Info List */
+.milk-list {
+    list-style: none;
+    padding: 0;
+}
+
+.milk-list li {
+    background: #222;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.milk-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons */
+button, .btn-secondary {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    width: 95%;
+}
+
+.btn-primary { background: #28a745; color: white; }
+.btn-primary:hover { background: #218838; transform: scale(1.05); }
+
+.btn-secondary { background: #007bff; color: white; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { background: #0056b3; transform: scale(1.05); }
+
+/* About Section in Dashboard */
+.about-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Order Success Message */
+.order-success {
+    text-align: center;
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Flash Messages Styling */
+.flash-messages {
+    text-align: center;
+    margin: 15px auto;
+    width: 80%;
+}
+
+.flash {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.flash.success { background: #28a745; color: white; }
+.flash.danger { background: #dc3545; color: white; }
+
+/* Admin Panel */
+.admin-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #121212;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    color: white;
+}
+
+/* Order Table */
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-table th, .order-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-table th {
+    background: #007bff;
+    color: white;
+}
+
+.order-table tr:nth-child(even) {
+    background: #222;
+}
+
+.order-table tr:hover {
+    background: #333;
+}
+
+/* Admin Button */
+.btn-admin {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: #ff5733;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-admin:hover {
+    background: #d9431e;
+    transform: scale(1.05);
+}
+
+
+/* Token Availability - Responsive Positioning */
+.token-info {
+    font-size: 18px;
+    font-weight: bold;
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+
+
+/* Desktop: Move Token Info to Top-Right */
+@media (min-width: 768px) {
+    .token-info {
+        position: absolute;
+        top: 80px;
+        right: 55px;
+        text-align: right;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .order-container, .milk-container {
+        width: 90%;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .page-container, .form-container, .dashboard-container, .order-container {
+        width: 90%;
+    }
+    nav {
+        flex-direction: column;
+    }
+}
+

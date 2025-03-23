@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - PB Dairy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="page-container">
+        <h1>Your Order History 📦</h1>
+
+        {% if orders %}
+            <ul class="order-list">
+                {% for order in orders %}
+                    <li>You ordered <strong>{{ order.milk_type }}</strong> on {{ order.timestamp }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You haven't ordered any milk yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}" class="button back-btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>
