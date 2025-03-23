@@ -50,7 +50,7 @@ def create_app():
 
     return app  # ✅ Return the app instance
 
-    
+app = create_app()    
 
 # Only run if this file is executed directly
 if __name__ == '__main__':
